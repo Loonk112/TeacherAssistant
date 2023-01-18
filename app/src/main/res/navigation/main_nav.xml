@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainSelection">
+    <fragment
+        android:id="@+id/mainCourses"
+        android:name="com.example.teacherassist.MainCourses"
+        android:label="fragment_main_courses"
+        tools:layout="@layout/fragment_main_courses"/>
+    <fragment
+        android:id="@+id/coursesAddNew"
+        android:name="com.example.teacherassist.CoursesAddNew"
+        android:label="fragment_courses_add_new"
+        tools:layout="@layout/fragment_courses_add_new">
+        <action
+            android:id="@+id/action_coursesAddNew_to_mainSelection"
+            app:destination="@id/mainSelection" />
+    </fragment>
+    <argument
+        android:name="courseName" />
+    <fragment
+        android:id="@+id/mainStudents"
+        android:name="com.example.teacherassist.MainStudents"
+        android:label="fragment_main_students"
+        tools:layout="@layout/fragment_main_students" />
+    <fragment
+        android:id="@+id/studentsAddNew"
+        android:name="com.example.teacherassist.StudentsAddNew"
+        android:label="fragment_students_add_new"
+        tools:layout="@layout/fragment_students_add_new" >
+        <action
+            android:id="@+id/action_studentsAddNew_to_mainSelection"
+            app:destination="@id/mainSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseDetails"
+        android:name="com.example.teacherassist.CourseDetails"
+        android:label="fragment_course_details"
+        tools:layout="@layout/fragment_course_details" >
+        <action
+            android:id="@+id/action_courseDetails_to_courseDetailsAddNew"
+            app:destination="@id/courseDetailsAddNew" />
+        <action
+            android:id="@+id/action_courseDetails_to_gradesView"
+            app:destination="@id/gradesView" />
+        <action
+            android:id="@+id/action_courseDetails_to_mainSelection"
+            app:destination="@id/mainSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentDetails"
+        android:name="com.example.teacherassist.StudentDetails"
+        android:label="fragment_student_details"
+        tools:layout="@layout/fragment_student_details" >
+        <action
+            android:id="@+id/action_studentDetails_to_studentDetailsAddNew"
+            app:destination="@id/studentDetailsAddNew" />
+        <action
+            android:id="@+id/action_studentDetails_to_gradesView"
+            app:destination="@id/gradesView" />
+        <action
+            android:id="@+id/action_studentDetails_to_mainSelection"
+            app:destination="@id/mainSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseDetailsAddNew"
+        android:name="com.example.teacherassist.courseDetailsAddNew"
+        android:label="fragment_course_details_add_new"
+        tools:layout="@layout/fragment_course_details_add_new" >
+        <action
+            android:id="@+id/action_courseDetailsAddNew_to_courseDetails"
+            app:destination="@id/courseDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentDetailsAddNew"
+        android:name="com.example.teacherassist.studentDetailsAddNew"
+        android:label="fragment_student_details_add_new"
+        tools:layout="@layout/fragment_student_details_add_new" >
+        <action
+            android:id="@+id/action_studentDetailsAddNew_to_studentDetails"
+            app:destination="@id/studentDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/gradesView"
+        android:name="com.example.teacherassist.gradesView"
+        android:label="fragment_grades_view"
+        tools:layout="@layout/fragment_grades_view" >
+        <action
+            android:id="@+id/action_gradesView_to_courseDetails"
+            app:destination="@id/courseDetails" />
+        <action
+            android:id="@+id/action_gradesView_to_studentDetails"
+            app:destination="@id/studentDetails" />
+        <action
+            android:id="@+id/action_gradesView_to_gradesNew"
+            app:destination="@id/gradesNew" />
+    </fragment>
+    <fragment
+        android:id="@+id/gradesNew"
+        android:name="com.example.teacherassist.gradesNew"
+        android:label="fragment_grades_new"
+        tools:layout="@layout/fragment_grades_new" >
+        <action
+            android:id="@+id/action_gradesNew_to_gradesView"
+            app:destination="@id/gradesView" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainSelection"
+        android:name="com.example.teacherassist.MainSelection"
+        android:label="fragment_main_selection"
+        tools:layout="@layout/fragment_main_selection" >
+        <action
+            android:id="@+id/action_mainSelection_to_courseDetails"
+            app:destination="@id/courseDetails" />
+        <action
+            android:id="@+id/action_mainSelection_to_coursesAddNew"
+            app:destination="@id/coursesAddNew" />
+        <action
+            android:id="@+id/action_mainSelection_to_studentDetails"
+            app:destination="@id/studentDetails" />
+        <action
+            android:id="@+id/action_mainSelection_to_studentsAddNew"
+            app:destination="@id/studentsAddNew" />
+    </fragment>
+</navigation>
